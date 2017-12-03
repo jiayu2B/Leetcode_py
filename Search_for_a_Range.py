@@ -6,6 +6,7 @@ class Solution(object):
         :rtype: List[int]
         """
         arr = [-1,-1]
+        
         left = 0; right = len(nums) - 1 
         flag = 0
         while (left <= right) :
@@ -18,9 +19,9 @@ class Solution(object):
                 left = mid + 1
             elif nums[mid] > target:
                 right = mid -1
-        
+##以上是一段二分搜索代码，搜索target值，放入left，right中
         if flag == 0: return arr
-        
+##
         while left > 0:
             if nums[left-1] != target:
                 break
@@ -31,3 +32,4 @@ class Solution(object):
             right += 1
         arr = [left,right]
         return arr
+##以上是一段遍历代码，遍历nums找到target的左右两边
