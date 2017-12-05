@@ -7,13 +7,17 @@ class Solution(object):
         for i in range(9):
             if not self.valid(board[i]):
                 return False
+            #
             col = [c[i] for c in board]
+            #一种二维数组操作纵向的方法
             if not self.valid(col):
                 return False
         
         for i in (0,3,6):
             for j in (0,3,6):
+                #
                 block = [board[t1][t2] for t1 in (i,i+1,i+2) for t2 in (j,j+1,j+2)]
+                #二维数组操作整块的方法
                 if not self.valid(block):
                     return False
         return True
