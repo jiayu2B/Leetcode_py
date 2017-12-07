@@ -12,7 +12,8 @@ class Solution(object):
             
             if nums[mid] == target:
                 return mid
-            
+            #二分搜索必须要在有序数列上，所以第一是先判断是前半段还是后半段有序。
+            #判断有序后，看target是否在该数列中。在的话就二分搜索这一段。不在的话就重新对另一端进行操作。
             if nums[mid] < nums[right]:
                 if target <= nums[right] and target > nums[mid]:
                     left = mid + 1
