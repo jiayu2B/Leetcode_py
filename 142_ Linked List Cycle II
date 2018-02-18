@@ -1,0 +1,21 @@
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def detectCycle(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        arr = []
+        while head:
+            arr.append(id(head))
+            head = head.next
+        #当重复的时候，return重复的head
+          if id(head) in arr:
+                return head
+        return None
+        
